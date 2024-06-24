@@ -1,0 +1,118 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: brown;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+header .title {
+    margin-top: 0px;
+}
+
+main {
+    padding: 1rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.grid-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.grid-item:hover {
+    transform: scale(1.05);
+}
+
+.account {
+    text-align: right;
+    float: right;
+}
+
+.account-button {
+    display: inline;
+    margin-top: 1px;
+    margin-right: 10px;
+    display: inline-block;
+    padding: 5px 10px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+
+.account-button :hover {
+    transform: translateY(-2px);
+}
+
+.icon {
+    margin-right: 5px;
+}
+
+.button-like {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.5em;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button-like:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.button-like:active {
+    background-color: #004085;
+    transform: translateY(0);
+}
+
+.input {
+    background-color: #eee;
+    border: none;
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 15px;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+}
+
+.picture-title {
+    display: inline;
+}
+
+.picture-text {
+    display: inline;
+}
+
+.img {
+    text-align: center;
+    width: 200px;
+}

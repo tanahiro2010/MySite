@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tanahiro2010 - gets html</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: #f5f2f0;
+        }
+
+        .input-container {
+            text-align: center;
+            margin-top: auto;
+            margin-bottom: auto;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .input-container input[type="text"] {
+            text-align: center;
+            align-items: center;
+            padding: 10px;
+            margin-right: 10px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .input-container input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+            box-sizing: border-box;
+            resize: none;
+            flex: 1;
+        }
+
+        pre {
+            margin: 0;
+            padding: 10px;
+            background: #f5f2f0;
+            overflow: auto;
+            height: calc(100% - 50px); /* adjust based on the height of the input container */
+        }
+
+        .title {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="input-container">
+        <h1 class="title">Display html</h1>
+        <input type="text" placeholder="URL" name="url" id="url">
+        <input type="submit" value="Enter" id="enter">
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autolinker/prism-autolinker.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
