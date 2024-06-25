@@ -54,10 +54,18 @@
             <h2>Links</h2>
             <p>
                 Please click "Here" word.<br>
-                Proxy: <a href="/Proxy/" title="Click here">Here</a><br>
-                GetsHtml: <a href="/GetsHtml/" title="Click here">Here</a><br>
-                PostPhp (Creating now): <a href="/PostPhp/" title="Click here">Here</a><br>
-                SNS (Creating now): <a href="/SNS/" title="Click here">Here</a>
+                <?php
+                $path = "./*";
+                $folders = glob($path, GLOB_ONLYDIR);
+
+                $html = "";
+                foreach ($folders as $folder) {
+                    $folder = str_replace("./", "", basename($folder));
+                    $html .= "$folder: <a href='/$folder/'>Here</a><br>";
+                }
+                echo $html;
+                ?>
+
             </p>
         </div>
     </main>
