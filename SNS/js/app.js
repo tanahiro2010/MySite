@@ -18,7 +18,7 @@ if (cookie != "") {
     if (session_id != ""){
         formData.append('session_id', session_id);
 
-        xhr.open('POST', '/api/session');
+        xhr.open('POST', './php/session.php');
         xhr.send(formData);
     
         xhr.onloadend = (() => {
@@ -30,9 +30,8 @@ if (cookie != "") {
                 const name = user['name'];
                 console.log(`mail: ${mail}\nname: ${name}`);
                 
-                document.querySelector('.account-button').style = 'display: none';
+                document.querySelectorAll('.account-button')[0].style = 'display: none';
                 document.querySelector('.account-menu').style = 'display: flex';
-                document.querySelector('.icon').src = `/api/get-icon?id=${mail}`;
             }
         });
     }
@@ -41,7 +40,7 @@ if (cookie != "") {
 const setup = (() =>{
     const xhr = new XMLHttpRequest();
 
-    xhr.open('GET', '/api/get-pictures');
+    xhr.open('GET', './php/get-pictures.php');
     xhr.send();
 
     xhr.onloadend = (() => {
