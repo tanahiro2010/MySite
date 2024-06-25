@@ -4,57 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tanahiro2010</title>
-    <link rel="stylesheet" href="./css/style.css">
     <style>
-        /* インラインで適用させたいCSSがあればここに追加 */
+        * {
+            margin-top: 1%;
+        }
+        .title {
+            text-align: center;
+        }
+
+        body {
+            background-color: antiquewhite;
+        }
+        main {
+            text-align: center;
+            font-size: large;
+        }
+        a {
+            color: black;
+            text-decoration: dashed;
+        }
+        h2 + p {
+            margin-top: 0px;
+        }
+
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>tanahiro2010</h1>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <h1 class="title">tanahiro2010</h1>
+    <main>
+        <div class="whoami">
+            <h2>Who am I?</h2>
+            <p>
+                Q. What is your name?<br>
+                A. tanahiro2010<br>
+                Q. How ald are you?<br>
+                A. I'm 14 years old. (2024 now)<br>
+                Q. When is your birthday?<br>
+                A. My birthday is 8/18<br>
+                Q. What is your hobby?<br>
+                A. My hobby is being programming<br>
+                <h3>
+                    Q. What is this site?<br>
+                    A. This is showing I to created programs.
+                </h3>
 
-    <section id="hero">
-        <div class="container">
-            <h2>ようこそ！tanahiro2010の</h2>
-            <p>This site is </p>
-            <a href="#" class="btn">Learn More</a>
+            </p>
         </div>
-    </section>
-
-    <section id="features">
-        <div class="container">
-            <h2>Our Features</h2>
-            <div class="feature">
-                <h3>Feature 1</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh.</p>
-            </div>
-            <div class="feature">
-                <h3>Feature 2</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh.</p>
-            </div>
-            <div class="feature">
-                <h3>Feature 3</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh.</p>
-            </div>
+        <div class="links">
+            <h2>Links</h2>
+            <p>
+                Please click "Here" word.<br>
+                Proxy: <a href="/Proxy/" title="Click here">Here</a><br>
+                GetsHtml: <a href="/GetsHtml/" title="Click here">Here</a><br>
+                PostPhp (Creating now): <a href="/PostPhp/" title="Click here">Here</a><br>
+                SNS (Creating now): <a href="/SNS/" title="Click here">Here</a>
+            </p>
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Stylish Website. All rights reserved.</p>
-        </div>
-    </footer>
-
+    </main>
 </body>
 </html>

@@ -10,13 +10,12 @@ action.addEventListener('click', () =>{
     console.log(icon);
     const xhr = new XMLHttpRequest();
     const formData = new FormData();
-    xhr.open('POST', '/api/account');
+    xhr.open('POST', '/SNS/php/signin.php');
 
-    formData.append('type', 'signin');
     formData.append('name', name.value);
     formData.append('mail', mail.value);
     formData.append('pass', pass.value);
-    formData.append('id', id.value)
+    formData.append('id', id.value);
     formData.append('icon', icon);
 
     xhr.send(formData);

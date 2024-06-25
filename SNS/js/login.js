@@ -10,7 +10,7 @@ button.addEventListener('click', () => {
     formData.append('mail', mail.value);
     formData.append('pass', pass.value);
 
-    xhr.open('POST', '/api/account');
+    xhr.open('POST', '../php/login.php');
     xhr.send(formData);
 
     xhr.onloadend = (() => {
@@ -22,7 +22,7 @@ button.addEventListener('click', () => {
             const cookie_data = `session_id=${encodeURIComponent(response)}`;
             console.log(cookie_data);
             document.cookie = cookie_data;
-            location.href = '/app';
+            location.href = '/app.html';
         }
     });
 });
