@@ -61,7 +61,9 @@
                 $html = "";
                 foreach ($folders as $folder) {
                     $folder = str_replace("./", "", basename($folder));
-                    $html .= "$folder: <a href='/$folder/'>Here</a><br>";
+                    if ($folder != "NoDisplay") {
+                        $html .= "$folder: <a href='/$folder/'>Here</a><br>";
+                    }
                 }
                 echo $html;
                 ?>
