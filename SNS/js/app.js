@@ -44,9 +44,10 @@ const setup = (() =>{
     xhr.send();
 
     xhr.onloadend = (() => {
-        const response = JSON.parse(xhr.responseText);
-        console.log(response);
-        const keys = Object.keys(response);
+        const response_str = xhr.responseText;
+        console.log(response_str);
+        const response_json = JSON.parse(response_str);
+        const keys = Object.keys(response_json);
         console.log(keys);
         let html = '';
         for (let obj of keys) {

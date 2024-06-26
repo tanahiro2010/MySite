@@ -27,7 +27,7 @@ send.addEventListener('click', () => {
     formData.append('text', text);
     formData.append('file', file);
 
-    xhr.open("POST", '/api/post-image');
+    xhr.open("POST", './php/post-image.php');
     xhr.send(formData);
 
     xhr.onloadend = (() => {

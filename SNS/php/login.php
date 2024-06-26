@@ -10,15 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $password = $db['users_data'][$user_token]['pass'];
 
             if ($pass == $password) {
-                $token = bin2hex(random_bytes(32));
-                echo $token;
-
-                $db["session"][$token] = $user_token;
-
-                $save_data = json_encode($db);
-
-                $file = fopen("./db/database.json", "w");
-                fwrite($file, $save_data);
+                echo $user_token;
             } else {
                 echo "False";
             }
