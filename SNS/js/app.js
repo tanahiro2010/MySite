@@ -51,7 +51,21 @@ const setup = (() =>{
         console.log(keys);
         let html = '';
         for (let obj of keys) {
-            html += `<div class="grid-item" onclick="location.href='/view?id=${obj}'"><img src="/api/get-img?id=${obj}" width="200" height="300" style="width:200px;object-fit: cover;"/><h3>${response[obj].title}</h3></div>`;
+            const file_type = response_json[obj]["type"];
+            let image_path = `./php/db/images/${obj}.`;
+            switch (file_type) {
+                case 'image/jpeg':
+                    image_path += "jpg";
+                    break
+                case 'image/gif':
+                    image_path += "gif";
+                    break
+                case 'image/png':
+                    image_path += "png";
+                    break;
+            }
+
+            html += `<div class="grid-item" onclick="location.href='./view.html?id=${obj}'"><img src="${image_path}" width="200" height="300" style="width:200px;object-fit: cover;"/><h3>${response_json[obj].title}</h3></div>`;
         }
         console.log(html);
         document.querySelector('.grid-container').innerHTML = html;

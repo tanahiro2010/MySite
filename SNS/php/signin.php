@@ -21,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $db['users_data'][$token]['my_post'] = [];
 
             $db['Secure-mail'][$mail] = $token;
+            array_push($db['user_tokens'], $token);
 
             $save_data = json_encode($db);
             $file = fopen("./db/database.json", "w");

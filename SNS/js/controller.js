@@ -21,17 +21,32 @@ send.addEventListener('click', () => {
     const file = document.querySelector('.file').files[0];
 
     console.log(`title: ${title}\ntext: ${text}`);
+    if (title && text) {
+        formData.append('session_id', session_id);
+        formData.append('title', title);
+        formData.append('text', text);
+        formData.append('file', file);
 
-    formData.append('session_id', session_id);
-    formData.append('title', title);
-    formData.append('text', text);
-    formData.append('file', file);
+        xhr.open("POST", './php/post-image.php');
 
-    xhr.open("POST", './php/post-image.php');
+    } else {
+        alert("Please input title and image-text");
+        return;
+    }
+
     xhr.send(formData);
 
     xhr.onloadend = (() => {
-        alert(xhr.responseText);
+        const response = xhr.responseText;
+        console.log(response);
+        alert(response);
+        if (response == "File-is-not-an-image") {
+            alert("Please select image file.");
+        } else if (response == "False") {
+            alert('Failed to upload.\nPlease Try again.');
+        } else {
+            location.href = `./view.html?id=${response}`;
+        };
     });
 });
 
