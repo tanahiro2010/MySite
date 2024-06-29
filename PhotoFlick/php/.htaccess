@@ -1,0 +1,7 @@
+<Files "database.json">
+    <IfModule mod_rewrite.c>
+        RewriteEngine On
+        RewriteCond %{REQUEST_URI} !^/php/.*\.php$
+        RewriteRule .* - [F]
+    </IfModule>
+</Files>

@@ -11,7 +11,7 @@ mb_language("Japanese");
 mb_internal_encoding("UTF-8");
 
 if (mb_send_mail($To, $title, $content, "")) {
-    $config['members'] = array_push($config['members'], [$name, $To]);
+    array_push($config['members'], [$name, $To]);
     echo "Done send.";
     $file = fopen("./config.json", "w");
     fwrite($file, json_encode($config));

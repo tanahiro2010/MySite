@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Social Network</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .post {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .post-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .post-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 10px;
+        }
+        .post-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .post-author {
+            font-weight: bold;
+            flex: 1;
+        }
+        .post-time {
+            color: #888;
+        }
+        .post-content {
+            line-height: 1.6;
+        }
+        .post-actions {
+            margin-top: 10px;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .btn {
+            padding: 8px 16px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #555;
+        }
+        .post-textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: none;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .login-btn {
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .login-btn:hover {
+            background-color: #45a049;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+        .form-group button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>My Social Network</h1>
+    <button class="login-btn" onclick="document.getElementById('loginModal').style.display='block'">Login</button>
+</header>
+
+<!-- Login Modal -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="document.getElementById('loginModal').style.display='none'">&times;</span>
+        <h2>Login</h2>
+        <form action="#">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Sign Up Modal -->
+<div id="signupModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="document.getElementById('signupModal').style.display='none'">&times;</span>
+        <h2>Sign Up</h2>
+        <form action="#">
+            <div class="form-group">
+                <label for="newUsername">Username</label>
+                <input type="text" id="newUsername" name="newUsername" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="newPassword">Password</label>
+                <input type="password" id="newPassword" name="newPassword" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn">Sign Up</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="container">
+    <form action="#">
+        <textarea class="post-textarea" placeholder="What's on your mind?"></textarea>
+        <button type="submit" class="btn">Post</button>
+    </form>
+
+    <div class="post">
+        <div class="post-header">
+            <div class="post-avatar">
+                <img src="avatar.jpg" alt="Avatar">
+            </div>
+            <div class="post-author">John Doe</div>
+            <div class="post-time">2 hours ago</div>
+        </div>
+        <div class="post-content">
+            <p>This is a sample post on My Social Network.</p>
+        </div>
+        <div class="post-actions">
+            <button class="btn">Like</button>
+            <button class="btn">Comment</button>
+        </div>
+    </div>
+
+    <div class="post">
+        <div class="post-header">
+            <div class="post-avatar">
+                <img src="avatar.jpg" alt="Avatar">
+            </div>
+            <div class="post-author">Jane Smith</div>
+            <div class="post-time">1 day ago</div>
+        </div>
+        <div class="post-content">
+            <p>Another post example on My Social Network.</p>
+        </div>
+        <div class="post-actions">
+            <button class="btn">Like</button>
+            <button class="btn">Comment</button>
+        </div>
+    </div>
+
+    <!-- More posts can be added here -->
+
+</div>
+
+<script>
+    // Close the modal when clicking outside of it
+    window.onclick = function(event) {
+        var modal = document.getElementsByClassName('modal');
+        for (var i = 0; i < modal.length; i++) {
+            if (event.target == modal[i]) {
+                modal[i].style.display = "none";
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
