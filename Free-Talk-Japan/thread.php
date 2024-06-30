@@ -86,7 +86,7 @@ echo '<h1 class="title">Free-Talk-Japan' . addslashes($thread_name) . '</h1>';
     <form action='./post.php' method='post' class='controler'>
         <h2>コメント</h2>
         <input type='hidden' name='thread' value='$thread_name'>
-        <input name='name' placeholder='name' class='name'><br>
+        <input name='name' placeholder='name' class='name' value='風吹けば名無し'><br>
         <textarea name='text' id='comment' cols='50' rows='5'></textarea>
         <input type='submit' class='send' value='投稿'>
     </form>";

@@ -43,11 +43,12 @@
                 A. My birthday is 8/18<br>
                 Q. What is your hobby?<br>
                 A. My hobby is being programming<br>
+                Q. What happened to the previous site?<br>
+                A. It still remains. <a href="https://tanahiro2010.zatunen.com">Click hereruby</a>
                 <h3>
                     Q. What is this site?<br>
                     A. This is showing I to created programs.
                 </h3>
-
             </p>
         </div>
         <div class="links">
